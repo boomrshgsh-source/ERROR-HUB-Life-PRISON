@@ -76,7 +76,7 @@ end
 plr.Backpack.ChildAdded:Connect(HandleBuffOnTool)
 
 local Tab = Window:Tab({Title = "Main", Icon = "star"})
-Tab:Section({Title = "Gun Buff Settings"})
+Tab:Section({Title = ""})
 
 Tab:Toggle({
     Title = "บัพปืน",
