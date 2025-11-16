@@ -104,7 +104,7 @@ Tab:Toggle({
         end
     end
 })
-     local Players = game:GetService("Players")
+    local Players = game:GetService("Players")
 local RunService = game:GetService("RunService")
 local Camera = workspace.CurrentCamera
 local LocalPlayer = Players.LocalPlayer
@@ -216,7 +216,6 @@ local function updateESP()
                     line.Visible = true
                 end
 
-                -- แถบเลือดเปลี่ยนสีตามเลือดจริง
                 local healthPercent = humanoid.Health / humanoid.MaxHealth
                 local healthBarHeight = height * healthPercent
                 d.HealthBar.From = Vector2.new(topLeft.X - 6, bottomLeft.Y)
@@ -274,19 +273,17 @@ local function stopESP()
     clearAllDraws()
 end
 
-local function Toggle(state)
-    if state then
+-- ฟังก์ชัน Toggle สำหรับใช้กับ UI
+local function Toggle(value)
+    if value then
         startESP()
     else
         stopESP()
     end
 end
 
--- เริ่มต้นปิด ESP
-stopESP()
-
--- เชื่อม UI Toggle กับฟังก์ชัน Toggle
-MainTab:Toggle({
+-- ตัวอย่างการใช้งานกับ UI
+Main:Toggle({
     Title = "มองคนในเซิฟ",
     Value = false,
     Callback = function(value)
