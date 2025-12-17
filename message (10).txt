@@ -1,11 +1,4 @@
-if not game:IsLoaded() then
-    repeat
-        task.wait()
-    until game:IsLoaded()
-end
-if not (game.PlaceId == 104715542330896 or game.PlaceId == 97556409405464) then
-    return
-end
+
 
 task.wait(0.1)
 local RS = game:GetService("ReplicatedStorage")
@@ -206,10 +199,10 @@ Icons.SetIconsType("lucide") -- lucide, craft and more...
 local Window =
     WindUI:CreateWindow(
     {
-        Title = "Kunlun's | Freemium",
-        Icon = "rbxassetid://121136649812616",
-        Author = "by #TBSkyen | discord.gg/NNY22NZ9rx",
-        Folder = "Kunlun's",
+        Title = "ERROR HUB| Free",
+        Icon = "",
+        Author = "Block spin",
+        Folder = "ERROR_HUB",
         Size = UDim2.fromOffset(400, 400),
         MinSize = Vector2.new(560, 350),
         MaxSize = Vector2.new(850, 560),
@@ -221,7 +214,7 @@ local Window =
         HideSearchBar = false,
         ScrollBarEnabled = false,
         OpenButton = {
-            Title = "Kunlun's",
+            Title = "test",
             CornerRadius = UDim.new(1, 0),
             StrokeThickness = 3,
             Enabled = true,
@@ -233,19 +226,13 @@ local Window =
 
 Window:Tag(
     {
-        Title = "v1.0.4",
+        Title = "1.0.0",
         Color = Color3.fromHex("#30ff6a"),
         Radius = 13
     }
 )
 
-Window:Tag(
-    {
-        Title = "Blockspin",
-        Color = Color3.fromHex("#FF0000"),
-        Radius = 13
-    }
-)
+
 
 --====================================================
 -- 🧍 MAIN TAB
@@ -253,16 +240,11 @@ Window:Tag(
 local MainTab =
     Window:Tab(
     {
-        Title = "General",
-        Icon = "globe"
+        Title = "☄️Main",
+        Icon = ""
     }
 )
 
-MainTab:Section(
-    {
-        Title = "Infomation:"
-    }
-)
 
 --== Money Reader ==--
 local Players = game:GetService("Players")
@@ -272,14 +254,14 @@ local PlayerGui = Client:WaitForChild("PlayerGui")
 local BankBalance =
     MainTab:Button(
     {
-        Title = "🏦 Bank Balance",
+        Title = "🏦Bank Balance",
         Desc = "N/A"
     }
 )
 local HandBalance =
     MainTab:Button(
     {
-        Title = "💸 Hand Balance",
+        Title = "💸Hand Balance",
         Desc = "N/A"
     }
 )
@@ -4018,4 +4000,5 @@ pcall(function()
         end
         
     end
+
 end)
