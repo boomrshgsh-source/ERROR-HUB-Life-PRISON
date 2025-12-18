@@ -214,7 +214,7 @@ local Window =
         HideSearchBar = false,
         ScrollBarEnabled = false,
         OpenButton = {
-            Title = "test",
+            Title = "ERROR HUB| Free",
             CornerRadius = UDim.new(1, 0),
             StrokeThickness = 3,
             Enabled = true,
@@ -443,7 +443,6 @@ MainTab:Toggle(
     {
         Title = "Walk Speed",
         Flag = "Walk Speed",
-        Icon = "check",
         Type = "Checkbox",
         Value = false,
         Callback = function(Value)
@@ -624,7 +623,6 @@ task.spawn(
     end
 )
 
--- 🧱 ปุ่ม Toggle UI
 MainTab:Toggle(
     {
         Title = "Auto Pick Item",
@@ -3773,7 +3771,7 @@ ServerTab:Button(
 
 ServerTab:Button(
     {
-        Title = "Hop Server (Lowest Player)",
+        Title = "Hop Server LowPlayer",
         Icon = "shuffle",
         Callback = function()
             local HttpService = game:GetService("HttpService")
@@ -3805,120 +3803,7 @@ ServerTab:Button(
     }
 )
 
-local ConfigTab =
-    Window:Tab(
-    {
-        Title = "Config",
-        Icon = "settings"
-    }
-)
 
-ConfigTab:Section(
-    {
-        Title = "Config Manager:"
-    }
-)
-
-local ConfigManager = Window.ConfigManager
-local ConfigName = ""
-
--- Input กรอกชื่อ Config
-ConfigTab:Input(
-    {
-        Title = "Config Name",
-        Placeholder = "Enter config name...",
-        Callback = function(value)
-            ConfigName = value
-        end
-    }
-)
-
--- ปุ่ม Save
-ConfigTab:Button(
-    {
-        Title = "Save Config",
-        Icon = "save",
-        Callback = function()
-            if ConfigName ~= "" then
-                local config = ConfigManager:CreateConfig(ConfigName)
-                config:Save()
-                WindUI:Notify(
-                    {
-                        Title = "Config Manager",
-                        Content = "Saved: " .. ConfigName,
-                        Duration = 2
-                    }
-                )
-            else
-                WindUI:Notify(
-                    {
-                        Title = "Config Manager",
-                        Content = "Please enter config name!",
-                        Duration = 2
-                    }
-                )
-            end
-        end
-    }
-)
-
--- ปุ่ม Load
-ConfigTab:Button(
-    {
-        Title = "Load Config",
-        Icon = "folder-open",
-        Callback = function()
-            if ConfigName ~= "" then
-                local config = ConfigManager:CreateConfig(ConfigName)
-                config:Load()
-                WindUI:Notify(
-                    {
-                        Title = "Config Manager",
-                        Content = "Loaded: " .. ConfigName,
-                        Duration = 2
-                    }
-                )
-            else
-                WindUI:Notify(
-                    {
-                        Title = "Config Manager",
-                        Content = "Please enter config name!",
-                        Duration = 2
-                    }
-                )
-            end
-        end
-    }
-)
-
--- ปุ่ม Delete
-ConfigTab:Button(
-    {
-        Title = "Delete Config",
-        Icon = "trash-2",
-        Callback = function()
-            if ConfigName ~= "" then
-                local config = ConfigManager:CreateConfig(ConfigName)
-                config:Delete()
-                WindUI:Notify(
-                    {
-                        Title = "Config Manager",
-                        Content = "Deleted: " .. ConfigName,
-                        Duration = 2
-                    }
-                )
-            else
-                WindUI:Notify(
-                    {
-                        Title = "Config Manager",
-                        Content = "Please enter config name!",
-                        Duration = 2
-                    }
-                )
-            end
-        end
-    }
-)
 
 task.wait(0.1)
 local RS = game:GetService("ReplicatedStorage")
@@ -4002,3 +3887,4 @@ pcall(function()
     end
 
 end)
+
